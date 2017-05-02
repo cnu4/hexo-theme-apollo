@@ -1,22 +1,22 @@
 menu:
     Blog: /
     Archive: /archives/
-    Weibo: http://weibo.com/sunchongsheng
-    GitHub: https://github.com/pinggod
+    Weibo: http://weibo.com/2489238680
+    GitHub: https://github.com/cnu4
     Rss: /atom.xml
 
-favicon: /favicon.png
+favicon: /favicon.ico
 logo: /favicon.png
 
 # Comment
 # e.g disqus: seansun
 disqus:
-duoshuo:
+duoshuo: fangxw-notes
 cloudTie:
 
 # Analytics
 # google-analytics:
-ga: UA-65933410-1
+ga: UA-89489706-1
 
 # Copyright Infomation
-startyear: 2015
+startyear: 2016
