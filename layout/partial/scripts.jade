@@ -8,3 +8,37 @@ if ga
         | (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;e=o.createElement(i);r=o.getElementsByTagName(i)[0];e.src='//www.google-analytics.com/analytics.js';r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));ga('create',
         != '"' + ga + '"'
         | ,'auto');ga('send','pageview');
+
+script.
+    (function(){
+        var req = GetXmlHttpObject()  
+        if (req == null) {  
+            console.log("not support AJAX!");  
+            return;  
+        }
+        req.onreadystatechange = function() {  
+            if (req.readyState === 4 && req.status === 200) {  
+                var deploy_server = req.getResponseHeader("Server");
+                if(deploy_server === 'Coding Pages'){
+                    document.getElementById('host-by').innerHTML+='hosted by <a href="https://pages.coding.me">Coding Pages, </a>'
+                }
+            }  
+        };  
+        req.open('GET', document.location, true);
+        req.send(null);
+    })();
+    function GetXmlHttpObject() {  
+        var xmlHttp = null;  
+        try {  
+            // Firefox, Opera 8.0+, Safari  
+            xmlHttp = new XMLHttpRequest();  
+        } catch (e) {  
+            // Internet Explorer  
+            try {  
+                xmlHttp = new ActiveXObject("Msxml2.XMLHTTP");  
+            } catch (e) {  
+                xmlHttp = new ActiveXObject("Microsoft.XMLHTTP");  
+            }  
+        }  
+        return xmlHttp;  
+    }
